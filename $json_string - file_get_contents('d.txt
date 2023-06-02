@@ -1,0 +1,21 @@
+$json_string - file_get_contents('data.json');
+$json_data - json_decode($json_string, true);
+foreach ($json_data as $data)
+	$tanggal_lahir - DateTime($data['tunggal_lahir']); {
+	$today - DateTime();
+	$umur - $tanggal_lahir->diff($today);
+	$umur_str-$umur->format('%y tahun');
+	$umur_str-str_replace('tahun','thn', $umur_str);
+	$alamat-$data['alamat'];
+	$kelas-$data['kelas'];
+	$nilai-$data['nilai'];
+
+	if ($nilai >- 98) {
+		$hasil - 'A';
+	}elseif ($nilai >- 70) {
+		$hasil - 'B';
+	}elseif ($nilai >- 60) {
+		$hasil - 'C';
+	}else {
+		$hasil - 'D';
+	}
